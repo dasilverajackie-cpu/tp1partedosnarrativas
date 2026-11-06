@@ -302,18 +302,19 @@ gema.style.left = posicionesGemas[nodoActual].left;
         }, 700);
 
     });
-
-});
 function activarMensajeToni() {
     const holograma = document.getElementById("holograma-toni");
     const video = document.getElementById("video-toni");
 
-    if (holograma.style.display === "block") {
-        holograma.style.display = "none";
+    const estaVisible = holograma.classList.contains("activo");
+
+    if (estaVisible) {
+        holograma.classList.remove("activo");
         video.pause();
         video.currentTime = 0;
     } else {
-        holograma.style.display = "block";
+        holograma.classList.add("activo");
         video.play();
     }
 }
+
