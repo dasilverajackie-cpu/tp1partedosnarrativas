@@ -595,7 +595,7 @@ img[src="reproductor.png"] {
 }
 
 .holograma-toni {
-    display: none !important;
+    display: none;
     position: absolute;
     left: 150px;
     top: -50px;
