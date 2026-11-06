@@ -619,3 +619,12 @@ img[src="reproductor.png"] {
     transform: translateY(-50%) !important;
     z-index: 100 !important;
 }
+#jarvis-panel {
+    position: fixed !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 100 !important;
+    display: block !important;
+    visibility: visible !important;
+}
