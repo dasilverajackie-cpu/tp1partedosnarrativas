@@ -29,10 +29,20 @@
   <p>
     Sin embargo, la energía es demasiado intensa.
   </p>
-  <video controls class="video-narrativo">
-    <source src="transferencia-energia.mp4" type="video/mp4">
-    Tu navegador no puede reproducir este video.
-</video>
+  <div class="mensaje-toni">
+
+    <img src="reproductor.png"
+         alt="Reactor de energía"
+         class="casco-toni"
+         onclick="activarMensajeToni()">
+
+    <div id="holograma-toni" class="holograma-toni">
+        <video id="video-toni" controls>
+            <source src="transferencia-energia.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>
   <h2>¿Qué sucede?</h2>
 
   <a href="nodo52.html">
