@@ -465,9 +465,6 @@ body::before {
 
 .gema-escondida {
     position: fixed;
-    bottom: 22%;
-    left: 12%;
-
     width: 28px;
     height: 28px;
 
