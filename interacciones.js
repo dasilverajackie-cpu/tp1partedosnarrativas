@@ -304,3 +304,10 @@ gema.style.left = posicionesGemas[nodoActual].left;
     });
 
 });
+function activarMensajeToni() {
+    const holograma = document.getElementById("holograma-toni");
+    const video = document.getElementById("video-toni");
+
+    holograma.style.display = "block";
+    video.play();
+}
