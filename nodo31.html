@@ -25,10 +25,20 @@
   <p>
     Tony cae al suelo. La victoria tiene un precio demasiado alto.
   </p>
-  <video controls class="video-narrativo">
-    <source src="el-sacrificio.mp4" type="video/mp4">
-    Tu navegador no puede reproducir este video.
-</video>
+  <div class="mensaje-toni">
+
+    <img src="reproductor.png"
+         alt="Reactor de Toni"
+         class="casco-toni"
+         onclick="activarMensajeToni()">
+
+    <div id="holograma-toni" class="holograma-toni">
+        <video id="video-toni" controls>
+            <source src="el-sacrificio.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>
   
   <h2>¿Qué sucede ahora?</h2>
   <a href="nodo41.html">[01] Intentar salvar a Tony</a>
