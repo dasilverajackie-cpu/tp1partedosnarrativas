@@ -585,30 +585,17 @@ img[src="reproductor.png"] {
     gap: 15px;
     margin: 30px 0;
 }
-
 .holograma-toni {
     display: none;
+    position: absolute;
+    left: 130px;
+    top: -80px;
+    z-index: 10;
     width: 450px;
     max-width: 70vw;
     border: 1px solid #00FFFF;
-    box-shadow: 0 0 15px #00FFFF, 0 0 35px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 15px #00FFFF,
+                0 0 35px rgba(0, 255, 255, 0.5);
     background: rgba(0, 20, 40, 0.8);
     animation: aparecerHolograma 0.6s ease;
-}
-
-.holograma-toni video {
-    width: 100%;
-    display: block;
-    filter: brightness(1.1) contrast(1.1);
-}
-
-@keyframes aparecerHolograma {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
