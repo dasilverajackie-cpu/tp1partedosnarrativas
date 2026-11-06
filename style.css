@@ -605,3 +605,10 @@ img[src="reproductor.png"] {
     background: rgba(0, 20, 40, 0.8);
     animation: aparecerHolograma 0.6s ease;
 }
+.panel-jarvis {
+    position: fixed !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 100 !important;
+}
