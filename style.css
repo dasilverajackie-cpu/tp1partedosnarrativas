@@ -586,11 +586,12 @@ img[src="reproductor.png"] {
     gap: 15px;
     margin: 30px 0;
 }
+.holograma-toni.activo {
+    display: block !important;
 }
+
 .holograma-toni {
-    display: none;
-  .holograma-toni.activo {
-    display: block;
+    display: none !important;
 }
     position: absolute;
     left: 130px;
