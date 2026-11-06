@@ -328,3 +328,133 @@ body::before {
         transform: translate(-50%, -50%) scale(1.4);
     }
 }
+
+/* =================================
+   INTERFAZ J.A.R.V.I.S.
+================================= */
+
+#jarvis-panel {
+    position: fixed;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+
+    width: 250px;
+    padding: 20px;
+
+    background: rgba(4, 15, 28, 0.78);
+    border: 1px solid rgba(98, 217, 255, 0.45);
+
+    color: #62D9FF;
+    font-family: monospace;
+
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.12);
+
+    z-index: 10;
+}
+
+.jarvis-header {
+    text-align: center;
+}
+
+.jarvis-header h2 {
+    color: #62D9FF;
+    font-size: 22px;
+    letter-spacing: 4px;
+    margin: 0 0 8px;
+}
+
+.jarvis-status {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.jarvis-line {
+    height: 1px;
+    background: rgba(98, 217, 255, 0.4);
+    margin: 18px 0;
+}
+
+.jarvis-section h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.jarvis-section p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+.jarvis-gemas {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.gema-indicador {
+    font-size: 17px;
+    opacity: 0.35;
+}
+
+.gema-indicador.roja {
+    color: #D62839;
+}
+
+.gema-indicador.azul {
+    color: #2786D1;
+}
+
+.gema-indicador.verde {
+    color: #2E9D59;
+}
+
+.gema-indicador.amarilla {
+    color: #FFD700;
+}
+
+.gema-indicador.violeta {
+    color: #B48CFF;
+}
+
+.gema-indicador.naranja {
+    color: #FF9E53;
+}
+
+.jarvis-footer {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.jarvis-pulso {
+    animation: pulsoJarvis 1.5s infinite;
+}
+
+@keyframes pulsoJarvis {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+/* ADAPTACION A CELULAR */
+
+@media (max-width: 850px) {
+
+    #jarvis-panel {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+
+        width: auto;
+        max-width: 400px;
+
+        margin: 35px auto;
+    }
+
+}
