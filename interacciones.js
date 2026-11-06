@@ -252,6 +252,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (encontradas.includes(gemaActual.id)) return;
 
     const gema = document.createElement("button");
+  const posicionesGemas = {
+  nodo21: { top: "18%", left: "75%" },
+  nodo32: { top: "65%", left: "15%" },
+  nodo33: { top: "40%", left: "88%" },
+  nodo41: { top: "80%", left: "60%" },
+  nodo43: { top: "30%", left: "25%" },
+  nodo44: { top: "55%", left: "50%" }
+};
+
+gema.style.top = posicionesGemas[nodoActual].top;
+gema.style.left = posicionesGemas[nodoActual].left;
 
     gema.className = "gema-escondida " + gemaActual.color;
     gema.textContent = gemaActual.simbolo;
