@@ -108,3 +108,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+/* MASCARA AL HACER CLICK */
+
+document.addEventListener("click", function (evento) {
+
+    const mascara = document.createElement("div");
+
+    mascara.classList.add("mascara-click");
+
+    mascara.style.left = evento.clientX + "px";
+    mascara.style.top = evento.clientY + "px";
+
+    document.body.appendChild(mascara);
+
+    setTimeout(function () {
+        mascara.remove();
+    }, 500);
+
+});
