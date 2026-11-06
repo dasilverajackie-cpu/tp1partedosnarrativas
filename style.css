@@ -1,0 +1,277 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 30px 15px;
+
+  font-family: 'Share Tech Mono', monospace;
+  color: #111111;
+  background-color: #efede8;
+
+  /* Máscara de Iron Man como fondo */
+  background-image:
+    linear-gradient(
+      rgba(239, 237, 232, 0.60),
+      rgba(239, 237, 232, 0.60)
+    ),
+    url("assets/mascara-fondo.png");
+
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  /* Cursor personalizado */
+  cursor: url("assets/cursor-ironman.png") 16 16, auto;
+}
+
+/* Panel principal J.A.R.V.I.S. */
+
+main {
+  position: relative;
+  max-width: 900px;
+  width: 92%;
+  margin: 40px auto;
+  padding: 45px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  border: 1px solid rgba(167, 25, 25, 0.45);
+
+  box-shadow:
+    0 0 25px rgba(167, 25, 25, 0.08),
+    inset 0 0 20px rgba(181, 138, 0, 0.04);
+}
+
+/* Línea superior del sistema */
+
+.system-status {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  padding-bottom: 12px;
+  border-bottom: 1px solid #c7b8a2;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #a71919;
+}
+
+/* Títulos */
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #a71919;
+
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  font-size: clamp(22px, 4vw, 36px);
+  line-height: 1.5;
+}
+
+/* Subtítulos */
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #b58a00;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 17px;
+}
+
+/* Texto narrativo */
+
+p {
+  color: #111111;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Gemas del Infinito */
+
+.gemas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  margin: 20px 0 35px;
+}
+
+.gema {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+  box-shadow: 0 0 7px currentColor;
+
+  transition: transform 0.3s ease;
+}
+
+.gema:hover {
+  transform: scale(1.5);
+}
+
+.espacio {
+  background: #4c7cff;
+  color: #4c7cff;
+}
+
+.mind {
+  background: #f4d400;
+  color: #f4d400;
+}
+
+.reality {
+  background: #e32636;
+  color: #e32636;
+}
+
+.power {
+  background: #8b35d1;
+  color: #8b35d1;
+}
+
+.time {
+  background: #20a64a;
+  color: #20a64a;
+}
+
+.soul {
+  background: #ff8c20;
+  color: #ff8c20;
+}
+
+/* Enlaces de navegación */
+
+a {
+  display: block;
+  margin: 18px 0;
+  padding: 14px 18px;
+
+  font-family: 'Share Tech Mono', monospace;
+  color: #a71919;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  border: 1px solid rgba(167, 25, 25, 0.55);
+  background: rgba(255, 255, 255, 0.5);
+
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  background: #a71919;
+
+  box-shadow: 0 0 12px rgba(167, 25, 25, 0.4);
+}
+
+/* Videos */
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+
+  margin: 30px auto;
+
+  border: 1px solid #b58a00;
+}
+
+/* Footer */
+
+footer {
+  margin-top: 40px;
+  padding-top: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  border-top: 1px solid #c7b8a2;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #a71919;
+}
+
+/* Adaptación para celulares */
+
+@media (max-width: 600px) {
+  main {
+    padding: 25px 18px;
+  }
+
+  .gemas {
+    gap: 10px;
+  }
+
+  .system-status,
+  footer {
+    font-size: 8px;
+  }
+}
+
+/* Navegación entre pantallas */
+
+.node {
+  display: none;
+}
+
+.node.active {
+  display: block;
+}
+
+/* CAMINO ROJO — Tony */
+body.camino-rojo h1 {
+  color: #D62839;
+  text-shadow: 0 0 12px rgba(214, 40, 57, 0.35);
+}
+
+/* CAMINO AZUL — Thor */
+body.camino-azul h1 {
+  color: #3674C5;
+  text-shadow: 0 0 12px rgba(54, 116, 197, 0.35);
+}
+
+/* CAMINO VERDE — Avengers */
+body.camino-verde h1 {
+  color: #4B9B58;
+  text-shadow: 0 0 12px rgba(75, 155, 88, 0.35);
+}
+
+/* CAMINO ROJO — Tony */
+body.camino-rojo a {
+  border: 1px solid #D62839;
+  box-shadow: 0 0 8px rgba(214, 40, 57, 0.25);
+}
+
+/* CAMINO AZUL — Thor */
+body.camino-azul a {
+  border: 1px solid #3674C5;
+  box-shadow: 0 0 8px rgba(54, 116, 197, 0.25);
+}
+
+/* CAMINO VERDE — Avengers */
+body.camino-verde a {
+  border: 1px solid #4B9B58;
+  box-shadow: 0 0 8px rgba(75, 155, 88, 0.25);
+}
