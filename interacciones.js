@@ -308,6 +308,12 @@ function activarMensajeToni() {
     const holograma = document.getElementById("holograma-toni");
     const video = document.getElementById("video-toni");
 
-    holograma.style.display = "block";
-    video.play();
+    if (holograma.style.display === "block") {
+        holograma.style.display = "none";
+        video.pause();
+        video.currentTime = 0;
+    } else {
+        holograma.style.display = "block";
+        video.play();
+    }
 }
