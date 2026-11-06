@@ -570,3 +570,10 @@ body::before {
 .jarvis-section p {
     color: #FFFFFF !important;
 }
+img[src="reproductor.png"] {
+    width: 120px !important;
+    height: auto !important;
+    max-width: 120px !important;
+    object-fit: contain;
+    cursor: pointer;
+}
