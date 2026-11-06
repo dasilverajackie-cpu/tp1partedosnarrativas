@@ -127,3 +127,57 @@ document.addEventListener("click", function (evento) {
     }, 500);
 
 });
+
+/* PANEL J.A.R.V.I.S. */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const archivo = window.location.pathname.split("/").pop();
+    const nodo = archivo.replace(".html", "").replace("index", "INICIO");
+
+    const panel = document.createElement("aside");
+    panel.id = "jarvis-panel";
+
+    panel.innerHTML = `
+        <div class="jarvis-header">
+            <h2>J.A.R.V.I.S.</h2>
+            <span class="jarvis-status">SYSTEM ONLINE</span>
+        </div>
+
+        <div class="jarvis-line"></div>
+
+        <section class="jarvis-section">
+            <h3>INFINITY STONES SCAN</h3>
+
+            <div class="jarvis-gemas">
+                <span class="gema-indicador roja">●</span>
+                <span class="gema-indicador azul">●</span>
+                <span class="gema-indicador verde">●</span>
+                <span class="gema-indicador amarilla">●</span>
+                <span class="gema-indicador violeta">●</span>
+                <span class="gema-indicador naranja">●</span>
+            </div>
+
+            <p>GEMAS LOCALIZADAS: <span id="jarvis-gemas">0 / 6</span></p>
+        </section>
+
+        <div class="jarvis-line"></div>
+
+        <section class="jarvis-section">
+            <h3>NAVEGACIÓN</h3>
+            <p>RUTA ACTIVA: <span id="jarvis-ruta">01</span></p>
+            <p>NODO ACTUAL: <span id="jarvis-nodo">${nodo}</span></p>
+            <p>NODOS VISITADOS: <span id="jarvis-visitados">1</span></p>
+        </section>
+
+        <div class="jarvis-line"></div>
+
+        <div class="jarvis-footer">
+            <span class="jarvis-pulso">●</span>
+            SISTEMA DE RASTREO ACTIVO
+        </div>
+    `;
+
+    document.body.appendChild(panel);
+
+});
