@@ -315,5 +315,4 @@ function activarMensajeToni() {
     holograma.style.opacity = "1";
     video.play();
 }
-}
 
