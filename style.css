@@ -275,3 +275,25 @@ body.camino-verde a {
   border: 1px solid #4B9B58;
   box-shadow: 0 0 8px rgba(75, 155, 88, 0.25);
 }
+
+/* FONDO: MASCARA */
+
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("fondo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: -1;
+}
