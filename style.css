@@ -297,3 +297,34 @@ body::before {
     pointer-events: none;
     z-index: -1;
 }
+
+/* MASCARA AL HACER CLICK */
+
+.mascara-click {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+
+    background-image: url("mouse.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    pointer-events: none;
+    z-index: 9999;
+
+    transform: translate(-50%, -50%);
+    animation: aparecerMascara 0.5s ease-out forwards;
+}
+
+@keyframes aparecerMascara {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+}
