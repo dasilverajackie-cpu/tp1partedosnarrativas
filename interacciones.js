@@ -181,3 +181,115 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(panel);
 
 });
+
+/* =================================
+   BUSQUEDA DE LAS GEMAS DEL INFINITO
+================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const gemas = {
+        nodo21: { id: "gema-realidad", color: "roja", simbolo: "◆" },
+        nodo32: { id: "gema-espacio", color: "azul", simbolo: "◆" },
+        nodo33: { id: "gema-tiempo", color: "verde", simbolo: "◆" },
+        nodo41: { id: "gema-mente", color: "amarilla", simbolo: "◆" },
+        nodo43: { id: "gema-poder", color: "violeta", simbolo: "◆" },
+        nodo44: { id: "gema-alma", color: "naranja", simbolo: "◆" }
+    };
+
+    const archivo = window.location.pathname.split("/").pop();
+    const nodoActual = archivo.replace(".html", "");
+
+    const gemaActual = gemas[nodoActual];
+
+    const almacenamiento = "gemasAvengersEncontradas";
+
+    let encontradas = JSON.parse(
+        localStorage.getItem(almacenamiento)
+    ) || [];
+
+    /* ACTUALIZAR PANEL J.A.R.V.I.S. */
+
+    function actualizarJarvis() {
+
+        const contador = document.getElementById("jarvis-gemas");
+
+        if (contador) {
+            contador.textContent = encontradas.length + " / 6";
+        }
+
+        const colores = ["roja", "azul", "verde", "amarilla", "violeta", "naranja"];
+
+        colores.forEach(function (color) {
+
+            const indicador = document.querySelector(
+                ".gema-indicador." + color
+            );
+
+            if (!indicador) return;
+
+            const gemaEncontrada = Object.values(gemas).find(function (gema) {
+                return gema.color === color && encontradas.includes(gema.id);
+            });
+
+            if (gemaEncontrada) {
+                indicador.style.opacity = "1";
+                indicador.style.textShadow = "0 0 12px currentColor";
+            } else {
+                indicador.style.opacity = "0.25";
+                indicador.style.textShadow = "none";
+            }
+
+        });
+    }
+
+    actualizarJarvis();
+
+    /* CREAR GEMA EN EL NODO CORRESPONDIENTE */
+
+    if (!gemaActual) return;
+
+    if (encontradas.includes(gemaActual.id)) return;
+
+    const gema = document.createElement("button");
+
+    gema.className = "gema-escondida " + gemaActual.color;
+    gema.textContent = gemaActual.simbolo;
+    gema.setAttribute("aria-label", "Gema del Infinito escondida");
+
+    document.body.appendChild(gema);
+
+    /* ENCONTRAR LA GEMA */
+
+    gema.addEventListener("click", function () {
+
+        if (encontradas.includes(gemaActual.id)) return;
+
+        encontradas.push(gemaActual.id);
+
+        localStorage.setItem(
+            almacenamiento,
+            JSON.stringify(encontradas)
+        );
+
+        /* EXPLOSION */
+
+        const explosion = document.createElement("div");
+
+        explosion.className = "explosion-gema";
+        explosion.style.left = gema.getBoundingClientRect().left + "px";
+        explosion.style.top = gema.getBoundingClientRect().top + "px";
+
+        document.body.appendChild(explosion);
+
+        gema.remove();
+
+        actualizarJarvis();
+
+        setTimeout(function () {
+            explosion.remove();
+        }, 700);
+
+    });
+
+});
