@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span class="gema-indicador naranja">●</span>
             </div>
 
-            <p>GEMAS LOCALIZADAS: <span id="jarvis-gemas">0 / 6</span></p>
+            <p>ENCONTRÁ LAS GEMAS: <span id="jarvis-gemas">0 / 6</span></p>
         </section>
 
         <div class="jarvis-line"></div>
