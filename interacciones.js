@@ -306,15 +306,14 @@ function activarMensajeToni() {
     const holograma = document.getElementById("holograma-toni");
     const video = document.getElementById("video-toni");
 
-    const estaVisible = holograma.classList.contains("activo");
-
-    if (estaVisible) {
-        holograma.classList.remove("activo");
-        video.pause();
-        video.currentTime = 0;
-    } else {
-        holograma.classList.add("activo");
-        video.play();
+    if (!holograma || !video) {
+        console.log("No se encontró el holograma o el video");
+        return;
     }
+
+    holograma.style.display = "block";
+    holograma.style.opacity = "1";
+    video.play();
+}
 }
 
