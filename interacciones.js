@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     panel.innerHTML = `
         <div class="jarvis-header">
             <h2>J.A.R.V.I.S.</h2>
-            <span class="jarvis-status">SYSTEM ONLINE</span>
+            <span class="jarvis-status">ENCONTRÁ LAS GEMAS</span>
         </div>
 
         <div class="jarvis-line"></div>
