@@ -458,3 +458,115 @@ body::before {
     }
 
 }
+
+/* =================================
+   GEMAS ESCONDIDAS
+================================= */
+
+.gema-escondida {
+    position: fixed;
+    bottom: 22%;
+    left: 12%;
+
+    width: 28px;
+    height: 28px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    opacity: 0.55;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    z-index: 20;
+
+    animation: brilloGema 2s infinite;
+}
+
+.gema-escondida:hover {
+    opacity: 1;
+    transform: scale(1.4);
+}
+
+.gema-escondida.roja {
+    color: #D62839;
+}
+
+.gema-escondida.azul {
+    color: #2786D1;
+}
+
+.gema-escondida.verde {
+    color: #2E9D59;
+}
+
+.gema-escondida.amarilla {
+    color: #FFD700;
+}
+
+.gema-escondida.violeta {
+    color: #B48CFF;
+}
+
+.gema-escondida.naranja {
+    color: #FF9E53;
+}
+
+@keyframes brilloGema {
+    0%, 100% {
+        filter: drop-shadow(0 0 2px currentColor);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 9px currentColor);
+    }
+}
+
+/* =================================
+   EXPLOSION AL ENCONTRAR UNA GEMA
+================================= */
+
+.explosion-gema {
+    position: fixed;
+
+    width: 45px;
+    height: 45px;
+
+    pointer-events: none;
+    z-index: 9999;
+
+    border-radius: 50%;
+
+    background: conic-gradient(
+        #D62839,
+        #FF9E53,
+        #FFD700,
+        #2E9D59,
+        #2786D1,
+        #B48CFF,
+        #D62839
+    );
+
+    animation: explosionEnergia 0.7s ease-out forwards;
+}
+
+@keyframes explosionEnergia {
+
+    0% {
+        opacity: 1;
+        transform: scale(0.2);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+
+}
